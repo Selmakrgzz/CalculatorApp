@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='styles/style.css')}}" rel="stylesheet"/>
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form action="/calculator">
+        <input type="text" name="equation" id="equation" placeholder="Enter an Equation">
+        <div class="col-1">
+            <div class="row-cl1-1">
+                <button type="button">1</button>
+                <button type="button">2</button>
+                <button type="button">3</button>
+            </div>
+            <div class="row-cl1-2">
+                <button type="button">4</button>
+                <button type="button">5</button>
+                <button type="button">6</button>
+            </div>
+            <div class="row-cl1-3">
+                <button type="button">7</button>
+                <button type="button">8</button>
+                <button type="button">9</button>
+            </div>
+            <div class="row-cl1-4">
+                <button type="button">0</button>
+                <button type="button">,</button>
+                <button type="button">()</button>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="row-cl2-1">
+                <button type="button">+</button>
+                <button type="button">-</button>
+            </div>
+            <div class="row-cl2-2">
+                <button type="button">*</button>
+                <button type="button">/</button>
+            </div>
+            <div class="row-cl2-3">
+                <button type="button">MOD</button>
+                <button type="button">DIV</button>
+            </div>
+            <div class="row-cl2-4">
+                <button type="button">DEL</button>
+                <button type="button">EXE</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
