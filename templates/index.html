@@ -4,53 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
     <link href="{{ url_for('static', filename='styles/style.css')}}" rel="stylesheet"/>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/cursed-timer-ulil');
+    </style>
     <title>Calculator</title>
 </head>
 <body>
-    <h1>Calculator</h1>
-    <form action="/calculator">
-        <input type="text" name="equation" id="equation" placeholder="Enter an Equation">
-        <div class="col-1">
-            <div class="row-cl1-1">
-                <button type="button">1</button>
-                <button type="button">2</button>
-                <button type="button">3</button>
-            </div>
-            <div class="row-cl1-2">
-                <button type="button">4</button>
-                <button type="button">5</button>
-                <button type="button">6</button>
-            </div>
-            <div class="row-cl1-3">
-                <button type="button">7</button>
-                <button type="button">8</button>
-                <button type="button">9</button>
-            </div>
-            <div class="row-cl1-4">
-                <button type="button">0</button>
-                <button type="button">,</button>
-                <button type="button">()</button>
+    <div class="container">
+        <h1>Calculator</h1>
+        <div class="calc-box">
+            <div class="form">
+                <input type="text" name="equation" id="equation" placeholder="Enter an Equation">
+                <div class="row">
+                    <div class="col-1">
+                        <div class="col-1-row">
+                            <button onclick="appendToEquation('9')">9</button>
+                            <button onclick="appendToEquation('8')">8</button>
+                            <button onclick="appendToEquation('7')">7</button>
+                        </div>
+                        <div class="col-1-row">
+                            <button onclick="appendToEquation('6')">6</button>
+                            <button onclick="appendToEquation('5')">5</button>
+                            <button onclick="appendToEquation('4')">4</button>
+                        </div>
+                        <div class="col-1-row">
+                            <button onclick="appendToEquation('3')">3</button>
+                            <button onclick="appendToEquation('2')">2</button>
+                            <button onclick="appendToEquation('1')">1</button>
+                        </div>
+                        <div class="col-1-row">
+                            <button onclick="appendToEquation(',')">,</button>
+                            <button onclick="appendToEquation('0')">0</button>
+                            <button onclick="appendToEquation('%')">%</button>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="col-2-row">
+                            <button onclick="clearEquation()">DEL</button>
+                            <button onclick="remove()">RM</button> 
+                        </div>                   
+                        <div class="col-2-row">
+                            <button onclick="appendToEquation('+')">+</button>
+                            <button onclick="appendToEquation('-')">-</button>
+                        </div>
+                        <div class="col-2-row">
+                            <button onclick="appendToEquation('/')">/</button>
+                            <button onclick="appendToEquation('*')">*</button> 
+                        </div>                   
+                        <div class="col-2-row">
+                            <button>MOD</button>
+                            <button onclick="calculate()">EXE</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-2">
-            <div class="row-cl2-1">
-                <button type="button">+</button>
-                <button type="button">-</button>
-            </div>
-            <div class="row-cl2-2">
-                <button type="button">*</button>
-                <button type="button">/</button>
-            </div>
-            <div class="row-cl2-3">
-                <button type="button">MOD</button>
-                <button type="button">DIV</button>
-            </div>
-            <div class="row-cl2-4">
-                <button type="button">DEL</button>
-                <button type="button">EXE</button>
-            </div>
-        </div>
-    </form>
+    </div>
 </body>
 </html>
